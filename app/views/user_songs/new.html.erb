@@ -1,0 +1,11 @@
+<%@songs.all.each do |song|%>
+<p><%=song.name%> <%=link_to 'Agregar'%></p>
+<%end%>
+
+<% Song.all.each do |s| %>
+      <p>
+        <%= form_for(UserSong.new) do |f| %>
+          
+        <% end %>
+      </p>
+<% end %>

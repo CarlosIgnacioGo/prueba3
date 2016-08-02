@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
+  get 'users/list'
+
+  resources :songs
+  
+  resources :genders
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+
+  resources :users do 
+    resources :user_songs
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'songs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
